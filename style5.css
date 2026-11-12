@@ -71,14 +71,16 @@ a {
 }
 
 .content {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   padding: 48px;
   box-sizing: border-box;
 }
 
 .card {
-    padding: 48px;
+    flex: 1 1 calc(33.333% - 16px);
+    box-sizing: border-box;
+  padding: 48px;
   background: white;
   border: 1px solid #eee;
   box-shadow: 20px 40px 16px rgba(0, 0, 0, 0.06);
