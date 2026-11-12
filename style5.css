@@ -1,6 +1,7 @@
 body {
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
   font-family:
     -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
     Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -12,11 +13,12 @@ body {
   display: flex;
   height: 72px;
   align-items: center;
-  width: 900px;
+  width: auto;
   background: darkmagenta;
   color: white;
   font-size: 32px;
   font-weight: bold;
+  padding: 0 16px;
 }
 
 .footer {
@@ -28,14 +30,23 @@ body {
   color: darkmagenta;
 }
 
+.main {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  padding: 16px;
+  box-sizing: border-box;
+  align-content: flex-end;
+}
+
 .sidebar {
   display: flex;
-  width: 300px;
   background: royalblue;
-  box-sizing: border-box;
-  flex: 1;
+  flex: 0 0 300px;
   flex-direction: column;
+  align-items: start;
   padding: 16px;
+  margin: -16px 0 -16px -16px;
 }
 
 ul {
@@ -48,30 +59,29 @@ ul {
 ul li a {
   padding: 16px;
   color: white;
-  font-size: 18px;
+  font-size: 24px;
   list-style: none;
   text-decoration: none;
 }
 
-.card {
-  padding: 16px;
-  border: 1px solid #eee;
-  box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.06);
-  border-radius: 4px;
-}
-
-.main {
+a {
+  justify-content: center;
+  align-items: center;
   display: flex;
-  flex-direction: row;
-  flex: 1;
-  padding: 16px;
-  box-sizing: border-box;
-  align-content: flex-end;
 }
 
 .content {
-  display: flex;
-  flex-direction: row;
-  padding: 16px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 48px;
   box-sizing: border-box;
+}
+
+.card {
+    padding: 48px;
+  background: white;
+  border: 1px solid #eee;
+  box-shadow: 20px 40px 16px rgba(0, 0, 0, 0.06);
+  border-radius: 4px;
+  margin: 16px;
 }
